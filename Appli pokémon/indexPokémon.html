@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel = "icon" type = "image/png" href="https://e7.pngegg.com/pngimages/314/24/png-clipart-atrocitus-green-lantern-corps-sinestro-red-lantern-corps-red-lantern-logo-red-lantern-thumbnail.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="stylePokémon.css">
+</head>
+<body>
+    <h1>Pokémon</h1>
+    <input type="text" placeholder="Chercher un Pokémon" id="input">
+    <button id="button">Rechercher</button>
+    
+    <!-- Container Historique des pokémons -->
+    <div id="recentContainer"></div>
+    
+    <!-- Affichage des informations sur le pokémon recherché -->
+    <p id="p"></p>
+    <div>
+        <img id="img" src="">
+        <img id="back" src="">
+    </div>
+    
+    <!-- Bouton plus d'informations -->
+    <button id="infoButton" style="display:none;">Plus d'info</button>
+
+    <!--Crie du pokémon-->
+    <audio controls id="cries">
+        <source src="" type="audio/ogg" id="cries-source">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+    
+    <!-- Recommandations aléatoires de 5 pokémons -->
+     <h2>Recommandations</h2>
+    <div id="recommendedContainer"></div>
+
+    <!-- Filtres -->
+     <h2>Filtrage Types</h2>
+    <select id="typeFilter"></select>
+    <button id="filterButton">Filtrer</button>
+    
+    <script src="scriptPokémon.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

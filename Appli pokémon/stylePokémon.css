@@ -1,0 +1,226 @@
+/* Style de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Titres */
+h1 {
+    font-size: 2rem;
+    color: #ff1500;
+    margin-bottom: 20px;
+}
+
+h2{
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #ff1500;
+    margin-bottom: 10px;
+}
+
+/* Champ de recherche */
+#input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+}
+
+/* Bouton de recherche */
+#button {
+    padding: 10px 20px;
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#button:hover {
+    background-color: #005f75;
+}
+
+/* Section historique des recherches */
+#recentContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#recentContainer button {
+    padding: 10px 15px;
+    background-color: #f56506;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#recentContainer button:hover {
+    background-color: #005f75;
+}
+
+/* Informations sur le pokémon */
+#p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#img, #back {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 7px;
+}
+
+/* Section "Plus d'info" */
+#infoButton {
+    margin-top: 5px;
+    padding: 10px 50px;
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+#infoButton:hover {
+    background-color: #005f75;
+}
+
+/* Recommandations aléatoires */
+#recommendedContainer {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#recommendedContainer button {
+    padding: 10px 15px;
+    background-color: #f56506;
+    color : white;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#recommendedContainer button:hover {
+    background-color: #005f75;
+}
+
+/* Filtres */
+select {
+    font-weight: bold;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 10px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+    background-color: #e0e0e0;
+}
+
+/* Bouton de filtrage */
+#filterButton {
+    padding: 10px 20px;
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#filterButton:hover {
+    background-color: #005f75;
+}
+
+/* Fenêtre modale */
+div.modal button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+div.modal button:hover {
+    background-color: #e55b50;
+}
+
+/* Conteneurs des pokémon filtrés */
+#filteredPokemonsContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Style des Conteneurs pokémon */
+#filteredPokemonsContainer div {
+    background-color: #e6e4e4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px #0000001a;
+    transition: transform 0.2s ease-in-out;
+}
+
+#filteredPokemonsContainer div:hover {
+    transform: scale(1.05);
+}
+
+/* Nom du pokémon */
+#filteredPokemonsContainer p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Image du pokémon */
+#filteredPokemonsContainer img {
+    width: 100px;
+    height: 100px;
+}
