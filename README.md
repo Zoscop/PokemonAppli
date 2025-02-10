@@ -14,7 +14,7 @@ Un petit projet permettant de rechercher des Pokémon via l'API PokeAPI.
 3. Le lecteur sur la page vous permet d'écouter le crie du pokémon choisi
 4. Un historique des cinqs derniers pokémons recherchés s'affiche sous forme de bouton, sous la barre de recherche, à chaque recherche
 5. La partie "Recommandation" affiche cinqs pokémons aléatoires, sous forme de bouton, à chaque rafraichissement de page
-6. La partie filtrage vous permet de séléctionner un type, et quand vous cliquez sur "Filtrer", une redirection se fait sur la page : http://localhost:5500/filterPokémon.html
+6. La partie filtrage vous permet de séléctionner un type, et quand vous cliquez sur "Filtrer", une redirection se fait sur la page : https://zoscop.github.io/PokemonAppli/Appli%20pokémon/filterPokémon.html
 7. Sur la page de filtrage, attendez que tous les pokémons du type sélectionné soient chargés, puis cliquez sur le pokémon de votre choix pour être redirigé vers la page principale et voir les infos sur le pokémon choisi
 
 ## 🔬 Fonctionnalités :
