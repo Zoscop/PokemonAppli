@@ -6,7 +6,7 @@ Un petit projet permettant de rechercher des Pokémon via l'API PokeAPI.
    ```bash
    git clone https://github.com/Zoscop/PokemonAppli
 
-2. Ouvrez [http://localhost:5500/indexPokémon.html](https://zoscop.github.io/PokemonAppli/Appli%20pokémon/indexPokémon.html) sur votre navigateur
+2. Ouvrez https://zoscop.github.io/PokemonAppli/Appli%20pokémon/indexPokémon.html sur votre navigateur
 
 ## 📖 Utilisation :
 1. Tapez le nom d'un pokémon dans la barre de recherche pour afficher son nom, son/ses type(s) et ses images
