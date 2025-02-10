@@ -100,7 +100,7 @@ h2{
         width: 80%;
     }
 } 
-
+    
 /* Section "Plus d'info" */
 #infoButton {
     margin-top: 5px;
@@ -149,15 +149,27 @@ h2{
 }
 
 /* Filtres */
-select {
-    font-weight: bold;
-    margin-top: 5px;
+#filterContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#filterContainer select, #filterContainer button {
     padding: 10px;
-    font-size: 1rem;
-    margin: 10px;
+    font-size: 16px;
     border-radius: 50px;
     border: 2px solid #ddd;
     background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 600px) {
+    #filterContainer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Bouton de filtrage */
@@ -178,30 +190,32 @@ select {
     background-color: #005f75;
 }
 
-/* Fenêtre modale */
-div.modal button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-div.modal button:hover {
-    background-color: #e55b50;
-}
-
 /* Conteneurs des pokémon filtrés */
 #filteredPokemonsContainer {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
     padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    #filteredPokemonsContainer {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans moyens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #filteredPokemonsContainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans plus petits */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #filteredPokemonsContainer {
+        grid-template-columns: 1fr; /* 1 colonne sur les petits écrans comme les téléphones */
+    }
 }
 
 /* Style des Conteneurs pokémon */
@@ -230,3 +244,5 @@ div.modal button:hover {
     width: 100px;
     height: 100px;
 }
+
+
