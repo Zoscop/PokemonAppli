@@ -53,8 +53,8 @@ async function fetchPokemon(pokemonName) {
 
     const pokemon = await response.json()
     currentPokemon = pokemon
-    let types = pokemon.types.map(t => t.type.name).join(", ")
-    p.textContent = `Le nom du Pokémon est ${pokemon.name} de type : ${types}`
+    let types = pokemon.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)).join(", ")
+    p.textContent = `Le nom du Pokémon est ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} de type : ${types}`
     img.setAttribute("src", pokemon.sprites.front_default)
     img2.setAttribute("src", pokemon.sprites.back_default)
     updatePokemonCry(pokemon.id) // Appelle la fonction pour le crie
@@ -76,7 +76,7 @@ function updateRecentSearches(name) {
     recentContainer.innerHTML = ""
     recentSearches.forEach(pokemon => {
         const btn = document.createElement("button")
-        btn.textContent = pokemon
+        btn.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1)
         btn.addEventListener("click", () => fetchPokemon(pokemon))
         recentContainer.appendChild(btn)
     });
@@ -135,12 +135,12 @@ function showModal(pokemon) {
     // Peut être fait à part
     modal.innerHTML = `
         <h3>${pokemon.name.toUpperCase()}</h3>
-        <p>Type: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
+        <p>Type: ${pokemon.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)).join(", ")}</p>
         <p>Poids: ${pokemon.weight / 10} kg</p>
         <p>Taille: ${pokemon.height / 10} m</p>
-        <p>Talents : ${pokemon.abilities.map(t => t.ability.name).join(", ")}</p>
+        <p>Talents : ${pokemon.abilities.map(t => t.ability.name.charAt(0).toUpperCase() + t.ability.name.slice(1)).join(", ")}</p>
         <p>Version Shiny:</p>
-        <img src = ${pokemon.sprites.front_shiny}></img><img src = ${pokemon.sprites.back_shiny}></img>
+        <img id = shinyFront src = ${pokemon.sprites.front_shiny}></img><img id = shinyBack src = ${pokemon.sprites.back_shiny}></img>
     `
         
     // Bouton "Fermer" pour fermer la fenêtre modale
@@ -158,7 +158,7 @@ async function showRecommendedPokemons() {
     const recommendedPokemons = await getRandomPokemons()
     recommendedPokemons.forEach(pokemon => {
         const btn = document.createElement("button")
-        btn.textContent = pokemon.name
+        btn.textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)
         btn.addEventListener("click", () => fetchPokemon(pokemon.name))
         recommendedContainer.appendChild(btn)
     })
