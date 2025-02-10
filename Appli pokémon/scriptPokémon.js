@@ -9,10 +9,14 @@ const recentContainer = document.getElementById("recentContainer")
 const typeFilter = document.getElementById("typeFilter")
 const genFilter = document.getElementById("genFilter")
 const filterButton = document.getElementById("filterButton")
+const favButton = document.getElementById("favoritesButton")
 
 const url = "https://pokeapi.co/api/v2/"
 let recentSearches = []
 let currentPokemon = null // Pokémon sélectionné
+
+const favoriteStar = document.getElementById("favoriteStar");
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 // événement de recherche
 button.addEventListener("click", () => fetchPokemon(input.value.toLowerCase()))
@@ -36,8 +40,6 @@ window.onload = async () => {
 }
 
 
-
-
 // Récupération des données sur un pokémon
 async function fetchPokemon(pokemonName) {
     if (!pokemonName) return
@@ -48,6 +50,7 @@ async function fetchPokemon(pokemonName) {
         img.setAttribute("src", "")
         img2.setAttribute("src", "")
         infoButton.style.display = "none"
+        favoriteStar.style.display = "none"
         return
     }
 
@@ -59,8 +62,32 @@ async function fetchPokemon(pokemonName) {
     img2.setAttribute("src", pokemon.sprites.back_default)
     updatePokemonCry(pokemon.id) // Appelle la fonction pour le crie
     updateRecentSearches(pokemon.name) //Appelle la fonction pour l'historique
+    updateFavoriteStar()
     infoButton.style.display = "block"
+    favoriteStar.style.display = "block"
 }
+
+// Vérifie si le Pokémon est en favori et met à jour l'étoile
+function updateFavoriteStar() {
+    if (!currentPokemon) return;
+    const isFavorite = favorites.includes(currentPokemon.name);
+    favoriteStar.textContent = isFavorite ? "★" : "☆";
+}
+
+// Ajoute ou enlève un Pokémon des favoris
+favoriteStar.addEventListener("click", () => {
+    if (!currentPokemon) return;
+
+    const index = favorites.indexOf(currentPokemon.name);
+    if (index === -1) {
+        favorites.push(currentPokemon.name); // Ajouter
+    } else {
+        favorites.splice(index, 1); // Retirer
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites)); // Sauvegarde
+    updateFavoriteStar(); // Met à jour l'affichage
+});
 
 
 // Mise à jour de l'historique des recherches
@@ -152,6 +179,8 @@ function showModal(pokemon) {
     document.body.appendChild(modal)
 }
 
+
+
 // Affichage des 5 pokémons recommandés aléatoirement
 async function showRecommendedPokemons() {
     recommendedContainer.innerHTML = ""
@@ -207,4 +236,6 @@ filterButton.addEventListener("click", () => {
     } 
 })
 
-
+favButton.addEventListener("click", () => {
+    window.location.href = "favorisPokémon.html"; // Redirige vers la page des favoris
+});

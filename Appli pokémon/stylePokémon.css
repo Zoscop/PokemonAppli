@@ -16,6 +16,7 @@ body {
     padding: 20px;
 }
 
+/*Page principale*/
 /* Titres */
 h1 {
     font-size: 3rem;
@@ -55,6 +56,36 @@ h2{
 
 #button:hover {
     background-color: #005f75;
+}
+
+/* Bouton des favoris */
+#favoritesButton {
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    position: absolute;
+    top: 97px;
+    right: 670px;
+}
+
+#favoritesButton:hover {
+    background-color: #005f75;
+}
+
+/* Étoile des favoris */
+#favoriteStar {
+
+    font-size: 50px;
+    color:#fffb00;
+    text-shadow:  
+    -2px -2px 0 #000000,  
+     2px -2px 0 #000000,  
+    -2px  2px 0 #000000,  
+     2px  2px 0 #000000; /* Ajoute un contour noir */
 }
 
 /* Section historique des recherches */
@@ -198,6 +229,7 @@ h2{
     background-color: #005f75;
 }
 
+/* Page de filtre */
 /* Conteneurs des pokémon filtrés */
 #filteredPokemonsContainer {
     display: grid;
@@ -253,4 +285,32 @@ h2{
     height: 100px;
 }
 
+/* Page des Favoris */
+/* Bouton retour */
+#retour {
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
 
+#retour:hover {
+    background-color: #005f75;
+}
+
+/* Pokémons favoris */
+#favoritesList button {
+    background-color: #ff1500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-right: 20px;
+}
