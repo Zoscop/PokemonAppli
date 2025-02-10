@@ -67,7 +67,7 @@ h2{
     border-radius: 50px;
     font-size: 1rem;
     padding: 10px 20px;
-    position: absolute;
+    position: fixed;
     top: 97px;
     right: 670px;
 }
