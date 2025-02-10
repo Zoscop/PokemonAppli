@@ -91,9 +91,15 @@ h2{
 #img, #back {
     width: 150px;
     height: auto;
-    margin: 5px;
+    margin: 0 auto;
     border-radius: 7px;
 }
+
+@media screen and (max-width: 600px) {
+    #img, #back {
+        width: 80%;
+    }
+} 
 
 /* Section "Plus d'info" */
 #infoButton {
