@@ -2,7 +2,7 @@
 Un petit projet permettant de rechercher des Pokémon via l'API PokeAPI.
 
 ## 💻 Installation :
-1. Cloner le dépôt :
+1. Cloner le dépôt (Facultatif):
    ```bash
    git clone https://github.com/Zoscop/PokemonAppli
 
