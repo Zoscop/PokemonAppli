@@ -16,6 +16,8 @@ Un petit projet permettant de rechercher des Pokémon via l'API PokeAPI.
 5. La partie "Recommandation" affiche cinqs pokémons aléatoires, sous forme de bouton, à chaque rafraichissement de page
 6. La partie filtrage vous permet de séléctionner un type, et quand vous cliquez sur "Filtrer", une redirection se fait sur la page : https://zoscop.github.io/PokemonAppli/Appli%20pokémon/filterPokémon.html
 7. Sur la page de filtrage, attendez que tous les pokémons du type sélectionné soient chargés, puis cliquez sur le pokémon de votre choix pour être redirigé vers la page principale et voir les infos sur le pokémon choisi
+8. Sur la page principale, une étoile à côté des images du pokémon sert à le mettre en favoris. Si elle est remplie, le pokémon est déjà dans les favoris, sinon cliquer sur l'étoile pour le mettre en favoris
+9. Le bouton "Favoris" à côté de la barre de recherche redirige vers la page des favoris où se situent les pokémons que vous avez mis en favoris : https://zoscop.github.io/PokemonAppli/Appli%20pokémon/favorisPokémon.html
 
 ## 🔬 Fonctionnalités :
 1. Recherche de pokémon avec affichage des infos
@@ -23,6 +25,7 @@ Un petit projet permettant de rechercher des Pokémon via l'API PokeAPI.
 3. Historique de recherche
 4. Suggestions de pokémon aléatoires
 5. Écoute des cries des pokémons
+6. Mettre les Pokémons en favoris
 
 ## ⚜️ Contributeur :
 Enzo BERTRAND, M2I L3, École Pratique de Luminy, Marseille
