@@ -41,6 +41,8 @@ h2{
     border: 2px solid #ddd;
 }
 
+
+
 /* Bouton de recherche */
 #button {
     padding: 10px 20px;
@@ -58,6 +60,14 @@ h2{
     background-color: #005f75;
 }
 
+@media screen and (max-width: 600px) {
+    #button {
+        position: relative;
+        top:0px;
+        right: 83px;
+    }
+}
+
 /* Bouton des favoris */
 #favoritesButton {
     background-color: #ff1500;
@@ -67,18 +77,28 @@ h2{
     border-radius: 50px;
     font-size: 1rem;
     padding: 10px 20px;
-    position: fixed;
-    top: 97px;
-    right: 670px;
+    position: relative;
+    bottom: 408px;
+    left: 220px;
 }
 
 #favoritesButton:hover {
     background-color: #005f75;
 }
 
+@media screen and (max-width: 600px) {
+    #favoritesButton {
+        bottom:548px;
+        left: 100px;
+    }
+}
+
 /* Étoile des favoris */
 #favoriteStar {
-
+    position: relative;
+    display:block;
+    bottom:150px;
+    left:200px;
     font-size: 50px;
     color:#fffb00;
     text-shadow:  
@@ -86,6 +106,13 @@ h2{
      2px -2px 0 #000000,  
     -2px  2px 0 #000000,  
      2px  2px 0 #000000; /* Ajoute un contour noir */
+}
+
+@media screen and (max-width: 600px) {
+    #favoriteStar {
+        bottom:300px;
+        left: 100px;
+    }
 }
 
 /* Section historique des recherches */
@@ -313,4 +340,10 @@ h2{
     font-size: 1rem;
     padding: 10px 20px;
     margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    #favoritesList button {
+        margin-bottom: 50px;
+    }
 }

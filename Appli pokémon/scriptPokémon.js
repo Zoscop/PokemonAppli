@@ -15,8 +15,8 @@ const url = "https://pokeapi.co/api/v2/"
 let recentSearches = []
 let currentPokemon = null // Pokémon sélectionné
 
-const favoriteStar = document.getElementById("favoriteStar");
-let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+const favoriteStar = document.getElementById("favoriteStar")
+let favorites = JSON.parse(localStorage.getItem("favorites")) || []
 
 // événement de recherche
 button.addEventListener("click", () => fetchPokemon(input.value.toLowerCase()))
