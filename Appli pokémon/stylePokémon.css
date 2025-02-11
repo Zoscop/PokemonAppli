@@ -329,20 +329,57 @@ h2{
     background-color: #005f75;
 }
 
-/* Pokémons favoris */
-#favoritesList button {
-    background-color: #ff1500;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    padding: 10px 20px;
-    margin-right: 20px;
+/* Conteneurs des pokémon fav */
+#favPokemonContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour les grands écrans */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    #favPokemonContainer {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans moyens */
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #favPokemonContainer {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans plus petits */
+    }
 }
 
 @media screen and (max-width: 600px) {
-    #favoritesList button {
-        margin-bottom: 50px;
+    #favPokemonContainer {
+        grid-template-columns: 1fr; /* 1 colonne sur les petits écrans comme les téléphones */
     }
+}
+
+/* Style des Conteneurs pokémon fav */
+#favPokemonContainer div {
+    background-color: #e6e4e4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px #0000001a;
+    transition: transform 0.2s ease-in-out;
+}
+
+#favPokemonContainer div:hover {
+    transform: scale(1.05);
+}
+
+/* Nom du pokémon fav */
+#favPokemonContainer p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Image du pokémon fav */
+#favPokemonContainer img {
+    width: 100px;
+    height: 100px;
 }

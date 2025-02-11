@@ -1,18 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || []
-    const favoritesList = document.getElementById("favoritesList")
+    const favPokemonContainer = document.getElementById("favPokemonContainer")
+    const apiUrl = "https://pokeapi.co/api/v2/"
 
     if (favorites.length === 0) {
-        favoritesList.innerHTML = "<p>Aucun Pokémon en favori.</p>"
+        favPokemonContainer.innerHTML = "<p>Aucun Pokémon en favori.</p>"
         return
+    } else {
+        pokemonFav(favorites.name)
     }
 
-    favorites.forEach(name => {
-        const btn = document.createElement("button")
-        btn.textContent = name.charAt(0).toUpperCase() + name.slice(1)
-        btn.addEventListener("click", () => {
-            window.location.href = `indexPokémon.html?pokemon=${name}`
+    async function pokemonFav() {
+        favPokemonContainer.innerHTML = ""
+
+        for (let i = 0; i < favorites.length; i++){
+            const response = await fetch(`${apiUrl}/pokemon/${favorites[i]}`)
+            const pokemon = await response.json()
+            const pokemonDiv = document.createElement("div")
+            pokemonDiv.innerHTML = `
+                <p>${pokemon.name.toUpperCase()}</p>
+             <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" class="clickable-pokemon" data-name="${pokemon.name}">
+        `
+            favPokemonContainer.appendChild(pokemonDiv)
+        }   
+        
+        document.querySelectorAll(".clickable-pokemon").forEach(img => {
+            img.addEventListener("click", (e) => {
+                const selectedPokemon = e.target.getAttribute("data-name")
+                window.location.href = `indexPokémon.html?pokemon=${selectedPokemon}`
+            })
         })
-        favoritesList.appendChild(btn)
-    })
+    }
+        
 })
+
