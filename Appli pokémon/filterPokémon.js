@@ -26,7 +26,7 @@ async function fetchPokemonsByType() {
         
      // Affichage des Pokémon du type sélectionné avec leur nom et une photo
     filteredPokemonsContainer.innerHTML = ""
-    for (let i = 0; i < Math.min(150, data.pokemon.length); i++) { // Limite à 150 Pokémons
+    for (let i = 0; i < Math.min(200, data.pokemon.length); i++) { // Limite à 150 Pokémons
         const pokemon = data.pokemon[i].pokemon
         const pokemonData = await fetch(`${apiUrl}pokemon/${pokemon.name}`).then(res => res.json())
 
