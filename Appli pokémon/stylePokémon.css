@@ -78,7 +78,7 @@ h2{
     font-size: 1rem;
     padding: 10px 20px;
     position: relative;
-    bottom: 408px;
+    bottom:88px;
     left: 220px;
 }
 
@@ -88,15 +88,14 @@ h2{
 
 @media screen and (max-width: 600px) {
     #favoritesButton {
-        bottom:548px;
-        left: 100px;
+        bottom:38px;
+        left:100px;
     }
 }
 
 /* Étoile des favoris */
 #favoriteStar {
     position: relative;
-    display:block;
     bottom:150px;
     left:200px;
     font-size: 50px;
