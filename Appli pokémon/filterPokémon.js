@@ -9,7 +9,7 @@ if (!selectedType) {
     fetchPokemonsByType()
 }
 
-//Récupération des pokémon en fonction du type séléctionné
+//Récupération des pokémons en fonction du type séléctionné
 async function fetchPokemonsByType() {
     try {
         filteredPokemonsContainer.innerHTML = "<p>Chargement des Pokémon...</p>"
@@ -24,9 +24,9 @@ async function fetchPokemonsByType() {
         }
 
         
-     // Affichage des Pokémon du type sélectionné avec leur nom et une photo
+     // Affichage des pokémons du type sélectionné avec leur nom et une photo
     filteredPokemonsContainer.innerHTML = ""
-    for (let i = 0; i < Math.min(200, data.pokemon.length); i++) { // Limite à 150 Pokémons
+    for (let i = 0; i < Math.min(200, data.pokemon.length); i++) { // Limite à 200 pokémons
         const pokemon = data.pokemon[i].pokemon
         const pokemonData = await fetch(`${apiUrl}pokemon/${pokemon.name}`).then(res => res.json())
 
@@ -46,7 +46,7 @@ async function fetchPokemonsByType() {
         })
     })
     }catch (error) {
-        console.error(error);
+        console.error(error)
         filteredPokemonsContainer.innerHTML = "<p>Une erreur est survenue lors du chargement.</p>"
 }}
 
