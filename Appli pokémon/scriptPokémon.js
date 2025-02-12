@@ -69,25 +69,25 @@ async function fetchPokemon(pokemonName) {
 
 // Vérifie si le Pokémon est en favori et met à jour l'étoile
 function updateFavoriteStar() {
-    if (!currentPokemon) return;
-    const isFavorite = favorites.includes(currentPokemon.name);
-    favoriteStar.textContent = isFavorite ? "★" : "☆";
+    if (!currentPokemon) return
+    const isFavorite = favorites.includes(currentPokemon.name)
+    favoriteStar.textContent = isFavorite ? "★" : "☆"
 }
 
 // Ajoute ou enlève un Pokémon des favoris
 favoriteStar.addEventListener("click", () => {
-    if (!currentPokemon) return;
+    if (!currentPokemon) return
 
-    const index = favorites.indexOf(currentPokemon.name);
+    const index = favorites.indexOf(currentPokemon.name)
     if (index === -1) {
-        favorites.push(currentPokemon.name); // Ajouter
+        favorites.push(currentPokemon.name)
     } else {
-        favorites.splice(index, 1); // Retirer
+        favorites.splice(index, 1)
     }
 
-    localStorage.setItem("favorites", JSON.stringify(favorites)); // Sauvegarde
-    updateFavoriteStar(); // Met à jour l'affichage
-});
+    localStorage.setItem("favorites", JSON.stringify(favorites))
+    updateFavoriteStar()
+})
 
 
 // Mise à jour de l'historique des recherches
@@ -106,7 +106,7 @@ function updateRecentSearches(name) {
         btn.textContent = pokemon.charAt(0).toUpperCase() + pokemon.slice(1)
         btn.addEventListener("click", () => fetchPokemon(pokemon))
         recentContainer.appendChild(btn)
-    });
+    })
 }
 
 // Récupéreration de l'URL du cri d'un pokémon via l'API
@@ -129,13 +129,12 @@ async function fetchPokemonCry(pokemonId) {
 
 // Mise à jour de la source du cri
 async function updatePokemonCry(pokemonId) {
-    const cryUrl = await fetchPokemonCry(pokemonId);
+    const cryUrl = await fetchPokemonCry(pokemonId)
     if (cryUrl) {
-        // Mise à jour de la source du fichier audio
-        const audioElement = document.getElementById("cries");
-        const sourceElement = document.getElementById("cries-source");
-        sourceElement.src = cryUrl;  // Affectation de la nouvelle source audio
-        audioElement.load();  // Recharge l'élément audio avec la nouvelle source
+        const audioElement = document.getElementById("cries")
+        const sourceElement = document.getElementById("cries-source")
+        sourceElement.src = cryUrl
+        audioElement.load()
     }
 }
 
